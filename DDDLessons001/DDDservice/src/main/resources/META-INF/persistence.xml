@@ -4,6 +4,7 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="default">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <mapping-file>hibernate-mapping/Example.hbm.xml</mapping-file>
+        <mapping-file>hibernate-mapping/Stock.hbm.xml</mapping-file>
+        <mapping-file>hibernate-mapping/StockDailyRecord.hbm.xml</mapping-file>
     </persistence-unit>
 </persistence>

@@ -8,7 +8,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
 @PropertySource("classpath:application.properties")
-@ComponentScan(basePackages = {"ru.axbit.service.infrastructure"})
+@ComponentScan(basePackages = {"ru.ddd.lessons.service.infrastructure"})
 public class ApplicationConfig {
 
     @Bean

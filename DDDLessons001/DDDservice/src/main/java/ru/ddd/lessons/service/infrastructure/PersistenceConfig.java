@@ -18,8 +18,10 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.ddd.lessons.dbapi.JpaDao;
 import ru.ddd.lessons.policy.Dao;
-import ru.ddd.lessons.service.persistence.hibernate.ExRepositoryHibernate;
-import ru.ddd.lessons.service.persistence.hibernate.interfaces.ExRepository;
+import ru.ddd.lessons.service.persistence.hibernate.StockDailyRecordRepositoryHibernate;
+import ru.ddd.lessons.service.persistence.hibernate.StockRepositoryHibernate;
+import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockDailyRecordRepository;
+import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockRepository;
 
 
 import javax.naming.NamingException;
@@ -108,11 +110,16 @@ public class PersistenceConfig {
         return new HibernateJpaVendorAdapter();
     }
 
+    @Autowired
+    @Bean(name = "StockRepository")
+    public StockRepository stockRepository(@Qualifier("baseDao") Dao baseDao) {
+        return new StockRepositoryHibernate(baseDao);
+    }
 
     @Autowired
-    @Bean(name = "ExRepository")
-    public ExRepository exRepository(@Qualifier("baseDao") Dao baseDao) {
-        return new ExRepositoryHibernate(baseDao);
+    @Bean(name = "StockDailyRecordRepository")
+    public StockDailyRecordRepository stockDailyRecordRepository(@Qualifier("baseDao") Dao baseDao){
+        return new StockDailyRecordRepositoryHibernate(baseDao);
     }
 
     private Properties jpaProperties(Environment environment) {

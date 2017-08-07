@@ -1,5 +1,7 @@
-
 CREATE SCHEMA `DDDLesson`;
+
+DROP TABLE `stock`;
+DROP TABLE `stock_daily_record`;
 
 DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
@@ -11,8 +13,8 @@ CREATE TABLE `stock` (
   UNIQUE KEY `UNI_STOCK_ID` (`STOCK_CODE`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `mkyongdb`.`stock_daily_record`;
-CREATE TABLE  `mkyongdb`.`stock_daily_record` (
+DROP TABLE IF EXISTS `dddlesson`.`stock_daily_record`;
+CREATE TABLE  `dddlesson`.`stock_daily_record` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `PRICE_OPEN` float(6,2) DEFAULT NULL,
   `PRICE_CLOSE` float(6,2) DEFAULT NULL,

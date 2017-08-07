@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Stock extends AbstractId  {
+public class Stock extends AbstractId implements Serializable {
 
     private String stockCode;
     private String stockName;
@@ -38,5 +38,14 @@ public class Stock extends AbstractId  {
 
     public void setStockDailyRecords(Set<StockDailyRecord> stockDailyRecords) {
         this.stockDailyRecords = stockDailyRecords;
+    }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "stockCode='" + stockCode + '\'' +
+                ", stockName='" + stockName + '\'' +
+                ", stockDailyRecords=" + stockDailyRecords +
+                '}';
     }
 }

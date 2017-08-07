@@ -5,7 +5,7 @@
     <class name="ru.ddd.lessons.service.domain.model.StockDailyRecord" table="stock_daily_record"
            catalog="DDDLesson">
         <id name="id" type="java.lang.Integer">
-            <column name="RECORD_ID"/>
+            <column name="id"/>
             <generator class="identity"/>
         </id>
         <property name="priceOpen" type="java.lang.Float">
@@ -21,10 +21,10 @@
             <column name="VOLUME"/>
         </property>
         <property name="date" type="date">
-            <column name="DATE" length="10" not-null="true" unique="true"/>
+            <column name="DATE" length="10" not-null="false" unique="true"/>
         </property>
         <many-to-one name="stock" class="ru.ddd.lessons.service.domain.model.StockDailyRecord" fetch="select">
-            <column name="ID" not-null="true"/>
+            <column name="stock_id" not-null="true"/>
         </many-to-one>
     </class>
 </hibernate-mapping>
