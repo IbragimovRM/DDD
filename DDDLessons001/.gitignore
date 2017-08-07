@@ -30,7 +30,9 @@ hs_err_pid*
 .settings/
 *.orig
 *.log
+
 log.txt
-DDDLessons01/db-api/target
-DDDLessons01/policy/target
-DDDLessons01/DDDservice/target
+
+db-api/target
+policy/target
+DDDservice/target

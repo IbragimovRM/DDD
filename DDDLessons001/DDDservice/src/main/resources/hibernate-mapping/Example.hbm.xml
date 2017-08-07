@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ru.ddd.lessons.service.domain.model" default-access="field">
+    <class name="ru.ddd.lessons.service.domain.model.Ex" table="Ex">
+        <meta attribute="class-description">
+            This class contains the ex detail.
+        </meta>
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="title" column="title" type="string"/>
+    </class>
+</hibernate-mapping>
