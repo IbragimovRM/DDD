@@ -1,0 +1,2 @@
+ALTER TABLE `dddlesson`.`stock_daily_record`
+ADD COLUMN `NAME_SUM` VARCHAR(45) NULL DEFAULT NULL AFTER `STOCK_ID`;

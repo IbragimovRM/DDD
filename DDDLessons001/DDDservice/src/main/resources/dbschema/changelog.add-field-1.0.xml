@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
-    <changeSet id="default-values-for-admin1" author="DDDLessons01">
-        <sqlFile path="src/main/resources/dbschema/create.sql"/>
+    <changeSet id="default-values-for-admin" author="DDDLessons">
+        <sqlFile path="src/main/resources/dbschema/alter.sql"/>
     </changeSet>
 </databaseChangeLog>
