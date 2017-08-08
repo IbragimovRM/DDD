@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>policy</artifactId>
-    
+    <packaging>jar</packaging>
+
     <properties>
         <hibernate-jpa-api.version>1.0.0.Final</hibernate-jpa-api.version>
     </properties>
