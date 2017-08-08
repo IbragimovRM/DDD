@@ -13,8 +13,8 @@
         <property name="stockName" type="string">
             <column name="STOCK_NAME" length="20" not-null="true" unique="true"/>
         </property>
-        <set name="stockDailyRecords" table="stock_daily_record"
-             inverse="true" lazy="true" fetch="select">
+        <set name="stockDailyRecords"
+             inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id" not-null="false"/>
             </key>

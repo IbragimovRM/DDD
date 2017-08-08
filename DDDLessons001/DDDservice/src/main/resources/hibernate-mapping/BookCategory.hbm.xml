@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping default-access="field">
+    <class name="ru.ddd.lessons.service.domain.model.BookCategory" table="book_category" catalog="DDDLesson">
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="nameCategory" type="string">
+            <column name="NAME_CATEGORY" length="10" not-null="true" unique="true"/>
+        </property>
+        <property name="codeCategory" type="string">
+            <column name="STOCK_NAME" length="20" not-null="true" unique="true"/>
+        </property>
+        <set name="books" table="book"
+             inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id" not-null="false"/>
+            </key>
+            <one-to-many class="ru.ddd.lessons.service.domain.model.Book"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -10,6 +10,9 @@ import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockDailyRecordR
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockRepository;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -23,10 +26,10 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
-        /*
+/*
         Stock stock = new Stock();
-        stock.setStockCode("7021252");
-        stock.setStockName("PADIecNI");
+        stock.setStockCode("70261252");
+        stock.setStockName("PADwIecNI");
         stockRepositroy.save(stock);
 
         StockDailyRecord stockDailyRecords = new StockDailyRecord();
@@ -39,12 +42,19 @@ public class Application implements CommandLineRunner {
         stockDailyRecords.setStock(stock);
         stock.getStockDailyRecords().add(stockDailyRecords);
 
+
         stockDailyRecordRepository.save(stockDailyRecords);
-        */
+*/
 
-        Stock stock = stockRepositroy.findByStockCode(13);
+        List<StockDailyRecord> list = stockDailyRecordRepository.findAll();
 
-        System.out.println(stock.toString());
+        StockDailyRecord stockDailyRecord = stockDailyRecordRepository.findById(1);
+        System.out.println(stockDailyRecord.toString());
+        Stock stock = stockRepositroy.findById(4);
+        Set<StockDailyRecord> stockDailyRecords = stock.getStockDailyRecords();
+        // System.out.println(stock.toString());
+
+
     }
 
     public static void main(String[] args) throws Exception {

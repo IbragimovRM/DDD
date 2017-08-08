@@ -23,6 +23,7 @@ import ru.ddd.lessons.service.persistence.hibernate.BookRepositoryHibernate;
 import ru.ddd.lessons.service.persistence.hibernate.StockDailyRecordRepositoryHibernate;
 import ru.ddd.lessons.service.persistence.hibernate.StockRepositoryHibernate;
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.BookCategoryRepository;
+import ru.ddd.lessons.service.persistence.hibernate.interfaces.BookRepository;
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockDailyRecordRepository;
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockRepository;
 
@@ -126,13 +127,13 @@ public class PersistenceConfig {
     }
 
     @Autowired
-    @Bean(name = "BookRepositoryHibernate")
-    public BookRepositoryHibernate bookRepositoryHibernate(@Qualifier("baseDao") Dao baseDao) {
+    @Bean(name = "BookRepository")
+    public BookRepository bookRepository(@Qualifier("baseDao") Dao baseDao) {
         return new BookRepositoryHibernate(baseDao);
     }
 
     @Autowired
-    @Bean(name = "BookCategoryHibernate")
+    @Bean(name = "BookCategoryRepository")
     public BookCategoryRepository bookCategoryRepository(@Qualifier("baseDao") Dao baseDao) {
         return new BookCategoryRepositoryHibernate(baseDao);
     }

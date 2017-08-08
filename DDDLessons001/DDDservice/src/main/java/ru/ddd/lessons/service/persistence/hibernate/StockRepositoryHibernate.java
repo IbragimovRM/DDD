@@ -22,4 +22,9 @@ public class StockRepositoryHibernate extends Repository<Stock> implements Stock
     public Stock findByStockCode(Integer stockCode) {
         return defaultDao.findOne(StockSpecification.findByStockCode(stockCode));
     }
+
+    @Override
+    public Stock findById(Integer id) {
+        return defaultDao.getByKey(Stock.class, id);
+    }
 }

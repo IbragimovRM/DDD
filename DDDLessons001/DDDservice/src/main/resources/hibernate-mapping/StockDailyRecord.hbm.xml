@@ -23,7 +23,7 @@
         <property name="date" type="date">
             <column name="DATE" length="10" not-null="false" unique="true"/>
         </property>
-        <many-to-one name="stock" class="ru.ddd.lessons.service.domain.model.StockDailyRecord" fetch="select">
+        <many-to-one name="stock" class="ru.ddd.lessons.service.domain.model.Stock" lazy="false" fetch="select">
             <column name="stock_id" not-null="true"/>
         </many-to-one>
     </class>

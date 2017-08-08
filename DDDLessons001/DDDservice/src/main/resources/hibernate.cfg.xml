@@ -9,5 +9,7 @@
         <property name="current_session_context_class">thread</property>
         <mapping resource="hibernate-mapping/Stock.hbm.xml"/>
         <mapping resource="hibernate-mapping/StockDailyRecord.hbm.xml"/>
+        <mapping resource="hibernate-mapping/Book.hbm.xml" />
+        <mapping resource="hibernate-mapping/BookCategory.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

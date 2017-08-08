@@ -65,4 +65,16 @@ public class StockDailyRecord extends AbstractId implements Serializable {
     public void setStock(Stock stock) {
         this.stock = stock;
     }
+
+    @Override
+    public String toString() {
+        return "StockDailyRecord{" +
+                "priceOpen=" + priceOpen +
+                ", priceClose=" + priceClose +
+                ", priceChange=" + priceChange +
+                ", volume=" + volume +
+                ", date=" + date +
+                ", stock=" + stock +
+                '}';
+    }
 }

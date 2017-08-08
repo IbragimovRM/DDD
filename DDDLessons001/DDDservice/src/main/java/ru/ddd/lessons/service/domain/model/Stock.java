@@ -10,10 +10,10 @@ public class Stock extends AbstractId implements Serializable {
 
     private String stockCode;
     private String stockName;
-    private Set<StockDailyRecord> stockDailyRecords;
+    private Set<StockDailyRecord> stockDailyRecords = new HashSet<>();
 
     public Stock() {
-        stockDailyRecords = new HashSet<>(0);
+
     }
 
     public String getStockCode() {
@@ -45,7 +45,7 @@ public class Stock extends AbstractId implements Serializable {
         return "Stock{" +
                 "stockCode='" + stockCode + '\'' +
                 ", stockName='" + stockName + '\'' +
-                ", stockDailyRecords=" + stockDailyRecords +
+               // ", stockDailyRecords=" + this.stockDailyRecords +
                 '}';
     }
 }
