@@ -18,8 +18,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.ddd.lessons.dbapi.JpaDao;
 import ru.ddd.lessons.policy.Dao;
+import ru.ddd.lessons.service.persistence.hibernate.BookCategoryRepositoryHibernate;
+import ru.ddd.lessons.service.persistence.hibernate.BookRepositoryHibernate;
 import ru.ddd.lessons.service.persistence.hibernate.StockDailyRecordRepositoryHibernate;
 import ru.ddd.lessons.service.persistence.hibernate.StockRepositoryHibernate;
+import ru.ddd.lessons.service.persistence.hibernate.interfaces.BookCategoryRepository;
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockDailyRecordRepository;
 import ru.ddd.lessons.service.persistence.hibernate.interfaces.StockRepository;
 
@@ -118,8 +121,20 @@ public class PersistenceConfig {
 
     @Autowired
     @Bean(name = "StockDailyRecordRepository")
-    public StockDailyRecordRepository stockDailyRecordRepository(@Qualifier("baseDao") Dao baseDao){
+    public StockDailyRecordRepository stockDailyRecordRepository(@Qualifier("baseDao") Dao baseDao) {
         return new StockDailyRecordRepositoryHibernate(baseDao);
+    }
+
+    @Autowired
+    @Bean(name = "BookRepositoryHibernate")
+    public BookRepositoryHibernate bookRepositoryHibernate(@Qualifier("baseDao") Dao baseDao) {
+        return new BookRepositoryHibernate(baseDao);
+    }
+
+    @Autowired
+    @Bean(name = "BookCategoryHibernate")
+    public BookCategoryRepository bookCategoryRepository(@Qualifier("baseDao") Dao baseDao) {
+        return new BookCategoryRepositoryHibernate(baseDao);
     }
 
     private Properties jpaProperties(Environment environment) {
