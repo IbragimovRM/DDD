@@ -6,5 +6,11 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
     <changeSet id="default-values-for-admin" author="DDDLessons">
         <sqlFile path="src/main/resources/dbschema/alter.sql"/>
+        <rollback>
+            <sqlFile path="src/main/resources/dbschema/del.sql"/>
+        </rollback>
+    </changeSet>
+    <changeSet id="1.1" author="DDDLessons">
+        <tagDatabase tag="1.1"/>
     </changeSet>
 </databaseChangeLog>

@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS `stock`;
+
 CREATE TABLE `stock` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `STOCK_CODE` varchar(10) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE `stock` (
    PRIMARY KEY (`ID`) USING BTREE
 )  ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `stock_daily_record`;
+
 CREATE TABLE  `stock_daily_record`(
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `PRICE_OPEN` float(6,2) DEFAULT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE  `stock_daily_record`(
    CONSTRAINT `FK_STOCK_TRANSACTION_STOCK_ID` FOREIGN KEY (`STOCK_ID`) REFERENCES `stock` (`ID`)
 )  ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `book_category`;
+
 CREATE TABLE  `book_category` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `NAME_CATEGORY` varchar(20) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE  `book_category` (
    PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-DROP TABLE IF EXISTS `book`;
+
 CREATE TABLE `book` (
   `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `NAME` varchar(10) NOT NULL,
